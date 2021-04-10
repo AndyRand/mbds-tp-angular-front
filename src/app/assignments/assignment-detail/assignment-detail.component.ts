@@ -9,6 +9,7 @@ import { Assignment } from '../assignment.model';
   templateUrl: './assignment-detail.component.html',
   styleUrls: ['./assignment-detail.component.css'],
 })
+
 export class AssignmentDetailComponent implements OnInit {
   // passé sous forme d'attribut HTML
   assignmentTransmis: Assignment;

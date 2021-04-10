@@ -1,9 +1,19 @@
 .container {
-  margin: 30px;
+  margin: 50px;
 }
 
 #bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+
+.picture {
+  width: 150px;
+}
+
+.pictureauteur {
+  width: 150px;
+  margin-left: 1450px;
 }
