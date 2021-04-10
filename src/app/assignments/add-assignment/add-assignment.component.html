@@ -4,15 +4,33 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
+  <mat-label>Liste des eleves</mat-label>
+  <mat-select required [(ngModel)]="eleve" name="eleve">
+    <mat-option *ngFor="let e of eleves" [value]="e">
+      {{e.nom}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Liste des professeurs</mat-label>
+    <mat-select required [(ngModel)]="prof" name="prof">
+      <mat-option *ngFor="let p of profs" [value]="p">
+        {{p.nom}}
+      </mat-option>
+    </mat-select>
+    </mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>Choisissez une date</mat-label>
-    <input matInput [matDatepicker]="picker" required [(ngModel)]="dateDeRendu" name="date">
+    <input matInput [matDatepicker]="picker" required [(ngModel)]="dateDeRendu"  name="date">
 
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
-  <button mat-stroked-button color="primary">
+  <button mat-stroked-button color="primary" (click)="onSubmit($event);" >
     Ajouter un devoir
   </button>
 </form>
