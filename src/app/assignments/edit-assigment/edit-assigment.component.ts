@@ -13,6 +13,8 @@ export class EditAssigmentComponent implements OnInit {
 
   // pour le formulaire
   nom = "";
+  note = 0;
+  remarques = "";
   dateDeRendu = null;
 
   constructor(
@@ -42,6 +44,8 @@ export class EditAssigmentComponent implements OnInit {
       this.assignment = assignment;
 
       this.nom = assignment.nom;
+      this.note = assignment.note;
+      this.remarques = assignment.remarques;
       this.dateDeRendu = assignment.dateDeRendu;
     });
   }
@@ -49,9 +53,11 @@ export class EditAssigmentComponent implements OnInit {
 
   onSubmit(event) {
     // on va modifier l'assignment
-    if((!this.nom) || (!this.dateDeRendu)) return;
+    if((!this.nom) || (!this.note) || (!this.remarques) || (!this.dateDeRendu)) return;
 
     this.assignment.nom = this.nom;
+    this.assignment.note = this.note;
+    this.assignment.remarques = this.remarques;
     this.assignment.dateDeRendu = this.dateDeRendu;
 
     this.assignmentsService.updateAssignment(this.assignment)

@@ -2,7 +2,16 @@
 
 <form ngForm #formAssignment class="form" (submit)="onSubmit($event); formAssignment.reset();">
   <mat-form-field>
-    <input matInput placeholder="Nom du devoir" required [(ngModel)]="nom" name="nom">
+    <input matInput placeholder="Nom du devoir" required [(ngModel)]="nom" name="nom">    
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Note" required [(ngModel)]="note"  name="note">    
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Remarques</mat-label>
+    <textarea matInput placeholder="Remarque du professeur" required [(ngModel)]="remarques" name="remarques"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -15,6 +24,6 @@
   </mat-form-field>
 
   <button mat-stroked-button color="primary">
-    Modifier le devoir
+    Modifier l'information du devoir
   </button>
 </form>
