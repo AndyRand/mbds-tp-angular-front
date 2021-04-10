@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { Assignment } from './assignment.model';
+import {Observable, Observer} from 'rxjs';
 
 @Component({
   selector: 'app-assignments',
   templateUrl: './assignments.component.html',
   styleUrls: ['./assignments.component.css'],
 })
+
+
 export class AssignmentsComponent implements OnInit {
   assignments:Assignment[];
   page: number=1;
@@ -18,6 +21,9 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number;
   hasNextPage: boolean;
   nextPage: number;
+ 
+
+  
 
   // on injecte le service de gestion des assignments
   constructor(private assignmentsService:AssignmentsService,
@@ -102,4 +108,5 @@ export class AssignmentsComponent implements OnInit {
       }
     });
   }
+  
 }

@@ -6,3 +6,22 @@
 .ajouterBtn {
   align-self: flex-end;
 }
+
+.pagi{
+  text-align: center;
+} 
+
+
+.mat-grid-tile {
+  background: lightblue;
+}
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

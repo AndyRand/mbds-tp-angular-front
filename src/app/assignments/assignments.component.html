@@ -5,40 +5,54 @@
     </button>
   </a>
   <h1>Liste des assignments</h1>
-  <mat-divider></mat-divider>
-  <nav>
-    <button mat-raised-button color="primary" (click)="premierePage()">
-      Première
-    </button>
-    <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">
-      Prev
-    </button>
-    <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">
-      Suiv
-    </button>
-    <button mat-raised-button color="primary" (click)="dernierePage()">
-      Dernière
-    </button>
-  </nav>
-
-  <mat-list *ngFor="let a of assignments">
+  <mat-divider></mat-divider> 
+  <div class="pagi">
     <nav>
-      <a routerLink="/assignment/{{a.id}}">
-        <h3 mat-subheader>{{a.dateDeRendu | date}}</h3>
-        <mat-list-item>
-          <mat-divider></mat-divider>
-
-          <p *ngIf="a.rendu; else nonsoumis" appRendu>
-            {{a.nom}}, rendu par l'élève.
-          </p>
-          <ng-template #nonsoumis>
-            <p appNonRendu>
-              {{a.nom}}, non encore rendu par l'élève.
-            </p>
-          </ng-template>
-
-        </mat-list-item>
-      </a>
+      <button mat-raised-button color="primary" (click)="premierePage()">
+        Première
+      </button>
+      <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">
+        Prev
+      </button>
+      <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">
+        Suiv
+      </button>
+      <button mat-raised-button color="primary" (click)="dernierePage()">
+        Dernière
+      </button>
     </nav>
-  </mat-list>
+  </div>
+
+<mat-tab-group mat-align-tabs="start" >
+    <mat-tab label="Rendu">
+      <mat-list *ngFor="let a of assignments">            
+        <nav *ngIf="a.rendu" >          
+          <a routerLink="/assignment/{{a.id}}">            
+            <h3 mat-subheader>{{a.dateDeRendu | date}}</h3>
+            <mat-list-item>                         
+              <p appRendu>                
+                {{a.nom}}, rendu par l'élève.
+              </p>    
+            </mat-list-item>
+          </a>
+        </nav>
+      </mat-list> 
+    </mat-tab>
+    <mat-tab label="Non Rendu"><mat-list *ngFor="let a of assignments">    
+      <nav *ngIf="!a.rendu">
+        <a routerLink="/assignment/{{a.id}}">
+          <h3 mat-subheader>{{a.dateDeRendu | date}}</h3>
+          <mat-list-item>        
+            <p  appNonRendu>
+              {{a.nom}}, non encore rendu par l'élève.
+            </p>  
+          </mat-list-item>
+        </a>
+      </nav>
+    </mat-list> </mat-tab>
+  </mat-tab-group>
+
+ 
+
+
 </main>
