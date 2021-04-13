@@ -30,7 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
+import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
 
 
 const routes:Routes = [
@@ -67,7 +72,11 @@ const routes:Routes = [
     NonRenduDirective,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssigmentComponent
+    EditAssigmentComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent,
+    AuthenticationButtonComponent,
+    AuthNavComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +89,9 @@ const routes:Routes = [
     MatTabsModule,
     MatDialogModule,
     MatSelectModule,
+    AuthModule.forRoot({
+      ...environment.auth
+    }),
     RouterModule.forRoot(routes), HttpClientModule
   ],
   providers: [],
