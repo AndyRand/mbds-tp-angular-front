@@ -1,19 +1,13 @@
-.container {
-  margin: 50px;
+.mat-card{
+  display:flex;
+  flex-direction: column;
 }
 
-#bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.mat-card-header {
+  flex-shrink: 0;
 }
 
-
-.picture {
-  width: 150px;
-}
-
-.pictureauteur {
-  width: 150px;
-  margin-left: 1450px;
+.mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
 }

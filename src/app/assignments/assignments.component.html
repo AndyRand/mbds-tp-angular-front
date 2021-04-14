@@ -52,7 +52,7 @@
         <!-- Nom Column -->
         <ng-container matColumnDef="Image">
           <th mat-header-cell *matHeaderCellDef> Prof </th>
-          <td mat-cell *matCellDef="let element"> <img class="pictureauteur" src="{{element.auteur.image}}"> </td>
+          <td mat-cell *matCellDef="let element"> <a routerLink="/assignment/{{element.id}}"><img class="pictureauteur" src="{{element.auteur.image}}"> </a></td>
         </ng-container>
         <ng-container matColumnDef="Nom">
           <th mat-header-cell *matHeaderCellDef> Nom </th>
