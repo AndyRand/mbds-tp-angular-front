@@ -1,4 +1,5 @@
 {
   "domain": "dev-r8hzk3-u.us.auth0.com",
-  "clientId": "On3D5zwaHeKtTfOmLPpiC9bqvdPgvtGW"
+  "clientId": "On3D5zwaHeKtTfOmLPpiC9bqvdPgvtGW",
+  "api":"https://assignment-angular-back.herokuapp.com/api/assignments"
 }

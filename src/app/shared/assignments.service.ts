@@ -5,6 +5,7 @@ import { catchError, filter, map, tap } from 'rxjs/operators';
 import { Assignment } from '../assignments/assignment.model';
 import { LoggingService } from './logging.service';
 import { assignmentsGeneres } from './data';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -290,7 +291,7 @@ export class AssignmentsService {
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
   //uri = "http://localhost:8010/api/assignments";
-  uri = "http://localhost:8010/api/assignments"
+  uri = environment.api;
 
   getAssignments():Observable<Assignment[]> {
     console.log("Dans le service de gestion des assignments...")
