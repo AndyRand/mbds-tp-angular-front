@@ -25,7 +25,7 @@ import { AssignmentDetailComponent } from './assignments/assignment-detail/assig
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { Routes, RouterModule } from '@angular/router';
 import { EditAssigmentComponent } from './assignments/edit-assigment/edit-assigment.component';
-import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from '@auth0/auth0-angular';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatTabsModule} from '@angular/material/tabs'; 
