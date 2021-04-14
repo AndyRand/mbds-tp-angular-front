@@ -13,6 +13,8 @@ import {Observable, Observer} from 'rxjs';
 
 export class AssignmentsComponent implements OnInit {
   assignments:Assignment[];
+  rendu:Assignment[];
+  nonRendu:Assignment[];
   page: number=1;
   limit: number=10;
   totalDocs: number;
@@ -21,7 +23,7 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number;
   hasNextPage: boolean;
   nextPage: number;
- 
+  displayedColumns = ['Image', 'Nom', 'Date', 'Details'];
 
   
 
@@ -47,6 +49,8 @@ export class AssignmentsComponent implements OnInit {
     this.assignmentsService.getAssignmentsPagine(this.page, this.limit)
     .subscribe(data => {
       this.assignments = data.docs;
+      this.rendu = this.assignments.filter(x => x.rendu);
+      this.nonRendu = this.assignments.filter(x => !x.rendu);
       this.page = data.page;
       this.limit = data.limit;
       this.totalDocs = data.totalDocs;

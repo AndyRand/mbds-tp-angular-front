@@ -25,31 +25,51 @@
 
 <mat-tab-group mat-align-tabs="start" >
     <mat-tab label="Rendu">
-      <mat-list *ngFor="let a of assignments">            
-        <nav *ngIf="a.rendu" >          
-          <a routerLink="/assignment/{{a.id}}">            
-            <h3 mat-subheader>{{a.dateDeRendu | date}}</h3>
-            <mat-list-item>                         
-              <p appRendu>                
-                {{a.nom}}, rendu par l'élève.
-              </p>    
-            </mat-list-item>
-          </a>
-        </nav>
-      </mat-list> 
+      <table mat-table [dataSource]="rendu" class="mat-elevation-z8">  
+        <!-- Nom Column -->
+        <ng-container matColumnDef="Image">
+          <th mat-header-cell *matHeaderCellDef> Prof </th>
+          <td mat-cell *matCellDef="let element"> <img class="pictureauteur" src="{{element.auteur.image}}"> </td>
+        </ng-container>
+        <ng-container matColumnDef="Nom">
+          <th mat-header-cell *matHeaderCellDef> Nom </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateDeRendu | date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Details">
+          <th mat-header-cell *matHeaderCellDef> Details </th>
+          <td mat-cell *matCellDef="let element">  <a routerLink="/assignment/{{element.id}}"> Voir </a> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
     </mat-tab>
-    <mat-tab label="Non Rendu"><mat-list *ngFor="let a of assignments">    
-      <nav *ngIf="!a.rendu">
-        <a routerLink="/assignment/{{a.id}}">
-          <h3 mat-subheader>{{a.dateDeRendu | date}}</h3>
-          <mat-list-item>        
-            <p  appNonRendu>
-              {{a.nom}}, non encore rendu par l'élève.
-            </p>  
-          </mat-list-item>
-        </a>
-      </nav>
-    </mat-list> </mat-tab>
+    <mat-tab label="Non Rendu">
+      <table mat-table [dataSource]="nonRendu" class="mat-elevation-z8">  
+        <!-- Nom Column -->
+        <ng-container matColumnDef="Image">
+          <th mat-header-cell *matHeaderCellDef> Prof </th>
+          <td mat-cell *matCellDef="let element"> <img class="pictureauteur" src="{{element.auteur.image}}"> </td>
+        </ng-container>
+        <ng-container matColumnDef="Nom">
+          <th mat-header-cell *matHeaderCellDef> Nom </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateDeRendu | date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Details">
+          <th mat-header-cell *matHeaderCellDef> Details </th>
+          <td mat-cell *matCellDef="let element">  <a routerLink="/assignment/{{element.id}}"> Voir </a> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-tab>
   </mat-tab-group>
 
  
