@@ -51,6 +51,10 @@ Dans l'ajout un assignment, vous avez un champ de formulaire :
 - une liste déroulante avec la liste des maitéres ( vu que c'est la matiére qui posséde un professeur alors quand on choisi une matiére le/la professeur est attribué(e) automatiquement
 - un champ Date avec date picker pour le choix de la date du devoir rendu ou pas
 
+# Une fois l'assignement est ajoutée, vous le trouverez à la derniere page de l'onglet non rendu.
+
+# Et pour rendre un assignment il suffit de cocher la checkbox et il sera automatiquement déplacer dans l'onglet rendu à la derniere page.
+
 Détails d'un assignment en cliquant sur un élément de la liste
 - Rendre un devoir en cochant rendu
 
