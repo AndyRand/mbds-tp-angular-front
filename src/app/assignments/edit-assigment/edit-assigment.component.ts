@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-assigment',
@@ -20,6 +21,7 @@ export class EditAssigmentComponent implements OnInit {
   constructor(
     private assignmentsService: AssignmentsService,
     private route: ActivatedRoute,
+    private _snackBar: MatSnackBar,
     private router: Router
   ) {}
 
@@ -63,6 +65,9 @@ export class EditAssigmentComponent implements OnInit {
     this.assignmentsService.updateAssignment(this.assignment)
       .subscribe(message => {
         console.log(message);
+        this._snackBar.open("Vous venez d'éditer un assignment", "modifiée", {
+          duration: 2000,
+        });
 
         // et on navigue vers la page d'accueil
         this.router.navigate(["/home"]);
