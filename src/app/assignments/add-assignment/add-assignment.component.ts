@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class AddAssignmentComponent implements OnInit {
   rendu = false;
 
   constructor(private assignmentsService:AssignmentsService,
-              private router:Router) {
+              private router:Router,
+              private _snackBar: MatSnackBar) {
                 this.eleves = assignmentsService.eleves;
                 this.profs = assignmentsService.profs;
               }
@@ -42,6 +44,9 @@ export class AddAssignmentComponent implements OnInit {
     this.assignmentsService.addAssignment(nouvelAssignment)
       .subscribe(reponse => {
         console.log(reponse.message);
+        this._snackBar.open("Vous venez d'ajouter un assignment", "ajoutée", {
+          duration: 2000,
+        });
 
          // et on navigue vers la page d'accueil qui affiche la liste
          this.router.navigate(["/home"]);
