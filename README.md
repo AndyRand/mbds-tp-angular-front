@@ -25,11 +25,13 @@ Sur le site,sans que vous soyez connécter vous pouvez regarder ceux qu'il y a d
 - regarder la liste des étudiants et les devoirs 
 - regarder les détails
 
-Mais vous pourriez pas ajouter ni éditer et surtout supprimer des assignments sans vous loger
+# Login
+Vous pouvez voir le site et son contenue mais vous ne pourriez pas ajouter ni éditer et surtout supprimer des assignments sans vous loger
 Quand vous clocker sur "Editer" par exemple vous êtes automatiquement rediriger vers la page de login :
 - Vous entrez vôtre login et mot de passe si voues en avez 
 - Vous vous enregistrez en cliquant sur "Sign up"
 - Ou tout simplement vous vous connectez avec votre login "Google"
+Et pour la gestion des authorisation nous avon utiliser auth0 pour nous aidez à cela
 
 # Liste des Assignments
 Deux onglets contenant respectivement :
