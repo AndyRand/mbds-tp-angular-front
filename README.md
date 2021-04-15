@@ -56,3 +56,7 @@ Détails d'un assignment en cliquant sur un élément de la liste
 
 Suppression d'un assignment
 
+# Notification
+Pour les notifications, chaque fois que vous ajouter, modifier et supprimer un simple "SnackBar" pop d'en bas pour vous avertir.
+
+
