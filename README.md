@@ -21,12 +21,20 @@ Ce repository contient tout les codes sources de l'application frontend :
 - lancer ng serve
 
 # Général 
+Sur le site,sans que vous soyez connécter vous pouvez regarder ceux qu'il y a dedans : 
+- regarder la liste des étudiants et les devoirs 
+- regarder les détails
 
+Mais vous pourriez pas ajouter ni éditer et surtout supprimer des assignments sans vous loger
+Quand vous clocker sur "Editer" par exemple vous êtes automatiquement rediriger vers la page de login :
+- Vous entrez vôtre login et mot de passe si voues en avez 
+- Vous vous enregistrez en cliquant sur "Sign up"
+- Ou tout simplement vous vous connectez avec votre login "Google"
 
-# Menu Assignments
+# Liste des Assignments
 Deux onglets contenant respectivement :
 - Une liste des assignments rendus avec pagination
-- Une liste des assignments non rendus avec pagination=
+- Une liste des assignments non rendus avec pagination
 
 Ajout d'un assignment normal
 
