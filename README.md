@@ -1,5 +1,5 @@
 #PROJET ANGULAR ASSIGNMENT GROUPE-19
-Andy Randrianirina 43, RAMANANTSOA kevin allain 32
+RAMANANTSOA kevin allain 32, Andy Randrianirina 43
 
 # AssignmentApp
 
