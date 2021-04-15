@@ -47,8 +47,8 @@ Clicker sur le menu "Gestion Assignment" :
 # Add assignemnt
 Dans l'ajout un assignment, vous avez un champ de formulaire : 
 - nom du devoir à rendre
-- une liste déroulante pour séléctionner l'éléve ayant ce devoir
-- une liste déroulante avec le nom du professeur avec qui il a le devoir auquel est rattacher le nom de matiére en question ( c'est le/la professeur qui posséde la matiére)
+- une liste déroulante pour séléctionner l'éléve ayant ce devoir (et chaque éléve ont déjà leur image attriuer à chaqun lors du choix)
+- une liste déroulante avec la liste des maitéres ( vu que c'est la matiére qui posséde un professeur alors quand on choisi une matiére le/la professeur est attribué(e) automatiquement
 - un champ Date avec date picker pour le choix de la date du devoir rendu ou pas
 
 Détails d'un assignment en cliquant sur un élément de la liste
