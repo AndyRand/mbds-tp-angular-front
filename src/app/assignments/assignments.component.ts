@@ -23,7 +23,7 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number;
   hasNextPage: boolean;
   nextPage: number;
-  displayedColumns = ['Image', 'Nom', 'Date', 'Details'];
+  displayedColumns = ['Image', 'Nom', 'Devoir', 'Date', 'Details'];
 
   
 
