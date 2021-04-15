@@ -35,3 +35,24 @@ section {
     justify-content: center;
     width: 120px;
   }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-container {
+    width: none;
+    height: 180px;
+    border: 1px solid rgba(102, 101, 101, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }

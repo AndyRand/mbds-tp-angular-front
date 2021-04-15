@@ -1,24 +1,51 @@
-<h1>
-  <nav>
-    
-    <div class="button-row">
+<p>
+  <mat-toolbar>
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Home</span>
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <div class="nav-container mb-3">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+          <div class="navbar-brand logo"></div>
+          <app-auth-nav></app-auth-nav>
+        </div>
+      </nav>
+    </div>
+ </button>
+</mat-toolbar>
+</p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p><a routerLink="/add" class="ajouterBtn">
+      <button mat-flat-button color="accent">
+        Ajouter un assignment
+      </button>
+    </a></p> 
+    <h1>
+      <div class="example-button-row">
+        <button mat-flat-button color="primary" (click)="peuplerBD()">PeuplerBD</button>
+      </div>
+  </h1>   
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <span>Gestion Assignments</span>
+      <mat-icon>assignment_returned</mat-icon>
+    </button>
+  </div>
+
+</mat-drawer-container>
+
+<!--
+  <div class="button-row">
       <button mat-raised-button color="primary" routerLink="/home" >{{title}}</button>
     </div>
-    <div class="example-button-row">
-      <button mat-flat-button color="primary" (click)="peuplerBD()">PeuplerBD</button>
-    </div>
-
-  </nav>
-</h1>
-
-<div class="nav-container mb-3">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
-      <div class="navbar-brand logo"></div>
-      <app-auth-nav></app-auth-nav>
-    </div>
-  </nav>
-</div>
+-->
 
 
 <!-- Indique qu'on affichera le composant qui correspond à l'URL courant -->

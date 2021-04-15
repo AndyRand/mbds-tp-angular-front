@@ -38,6 +38,9 @@ import { LogoutButtonComponent } from './components/logout-button/logout-button.
 import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
 import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 const routes:Routes = [
   {
@@ -92,6 +95,9 @@ const routes:Routes = [
     MatTabsModule,
     MatDialogModule,
     MatSelectModule,
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatToolbarModule,
     AuthModule.forRoot({
       ...environment.auth
     }),
